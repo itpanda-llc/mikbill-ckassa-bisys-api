@@ -106,8 +106,7 @@ class Query
         $sth = Statement::prepare(Sql::ADD_PAYMENT);
 
         $categoryId = (int) $_ENV['CATEGORY_ID'];
-
-        $sth->bindParam(Holder::PAY_ID, $payId);
+        
         $sth->bindParam(Holder::CATEGORY_ID,
             $categoryId,
             \PDO::PARAM_INT);
