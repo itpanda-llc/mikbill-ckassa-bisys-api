@@ -60,7 +60,7 @@ class Query
      */
     public static function checkCategory(): bool
     {
-        $sth = Statement::query(Sql::CHECK_CATEGORY);
+        $sth = Statement::prepare(Sql::CHECK_CATEGORY);
 
         $categoryId = (int) $_ENV['CATEGORY_ID'];
 
