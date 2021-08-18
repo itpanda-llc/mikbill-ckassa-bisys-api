@@ -26,7 +26,7 @@ class Sign
                                  string $sign): bool
     {
         return (mb_strtoupper($sign,
-                Charset::UTF_8) === self::get($params));
+                $_ENV['RESPONSE_CHARSET']) === self::get($params));
     }
 
     /**
@@ -37,6 +37,6 @@ class Sign
     {
         $strings[] = $_ENV['SIGN_PASSWORD'];
 
-        return mb_strtoupper(md5(implode($strings)), Charset::UTF_8);
+        return mb_strtoupper(md5(implode($strings)), $_ENV['RESPONSE_CHARSET']);
     }
 }

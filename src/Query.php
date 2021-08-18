@@ -118,7 +118,7 @@ class Query
 
         Statement::execute($sth);
 
-        return ($sth->rowCount() !== 0);
+        return $sth->rowCount() !== 0;
     }
 
     /**
@@ -133,6 +133,6 @@ class Query
 
         Statement::execute($sth);
 
-        return ($sth->rowCount() !== 0);
+        return $sth->rowCount() !== 0;
     }
 }
